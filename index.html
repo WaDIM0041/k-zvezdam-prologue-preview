@@ -168,7 +168,7 @@
   </div>
 </footer>
 </div>
-<script nonce="jq4cVKYt9iKPpb9-JyZ2QCXH">
+<script nonce="SHyc0wopi38OwYcfz-3E6vX-">
 (function(){
   var n=document.getElementById('nav'),
       t=document.getElementById('toTop'),
@@ -188,11 +188,11 @@
   if(t) t.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 })();
 </script>
-<script nonce="jq4cVKYt9iKPpb9-JyZ2QCXH" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script nonce="jq4cVKYt9iKPpb9-JyZ2QCXH" src="/k-zvezdam-prologue-preview/static/js/hero.js"></script>
-<script nonce="jq4cVKYt9iKPpb9-JyZ2QCXH" src="/k-zvezdam-prologue-preview/static/js/flyby.js"></script>
+<script nonce="SHyc0wopi38OwYcfz-3E6vX-" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script nonce="SHyc0wopi38OwYcfz-3E6vX-" src="/k-zvezdam-prologue-preview/static/js/hero.js"></script>
+<script nonce="SHyc0wopi38OwYcfz-3E6vX-" src="/k-zvezdam-prologue-preview/static/js/flyby.js"></script>
 
-<script nonce="jq4cVKYt9iKPpb9-JyZ2QCXH">
+<script nonce="SHyc0wopi38OwYcfz-3E6vX-">
 // scroll reveal
 (function(){
   var section=document.querySelector('.annot');
@@ -219,7 +219,7 @@ document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
     var last=JSON.parse(localStorage.getItem('kz_last')||'null');
     if(last && last.id){
       var b=document.getElementById('continueBtn');
-      if(b){ b.href='/read/'+last.id; b.textContent='Продолжить: '+(last.title||'глава'); b.hidden=false; }
+      if(b && /^\d+$/.test(String(last.id))){ b.href=new URL('read/'+last.id+'/',document.querySelector('.brand').href).href; b.textContent='Продолжить: '+(last.title||'глава'); b.hidden=false; }
     }
   }catch(e){}
 })();
