@@ -18,7 +18,7 @@
 <link rel="shortcut icon" href="/k-zvezdam-prologue-preview/static/favicon.ico">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/k-zvezdam-prologue-preview/static/css/style.css?v=black-cube-reference-1">
+<link rel="stylesheet" href="/k-zvezdam-prologue-preview/static/css/style.css?v=abyss-glow-1">
 </head>
 <body class="reading">
 <nav id="nav">
@@ -221,7 +221,7 @@
   </div>
 </footer>
 </div>
-<script nonce="pF2apnqYXqIymmFoqVm5swRP">
+<script nonce="-t6HLhXm6kNjPKxNeJnC_uR8">
 (function(){
   var n=document.getElementById('nav'),
       t=document.getElementById('toTop'),
@@ -241,12 +241,12 @@
   if(t) t.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 })();
 </script>
-<script nonce="pF2apnqYXqIymmFoqVm5swRP" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script nonce="pF2apnqYXqIymmFoqVm5swRP" src="/k-zvezdam-prologue-preview/static/js/hero.js"></script>
-<script nonce="pF2apnqYXqIymmFoqVm5swRP" src="/k-zvezdam-prologue-preview/static/js/flyby.js"></script>
+<script nonce="-t6HLhXm6kNjPKxNeJnC_uR8" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script nonce="-t6HLhXm6kNjPKxNeJnC_uR8" src="/k-zvezdam-prologue-preview/static/js/hero.js"></script>
+<script nonce="-t6HLhXm6kNjPKxNeJnC_uR8" src="/k-zvezdam-prologue-preview/static/js/flyby.js"></script>
 
 
-<script nonce="pF2apnqYXqIymmFoqVm5swRP">
+<script nonce="-t6HLhXm6kNjPKxNeJnC_uR8">
 (function(){
   var scenes=document.querySelectorAll('.scene-ambient');
   if(!scenes.length) return;
@@ -259,25 +259,25 @@
     entries.forEach(function(entry){
       if(!entry.isIntersecting) return;
       var scene=entry.target.closest('.scene-ambient');
-      if(entry.target.classList.contains('ambient-glitch-trigger')) scene.classList.add('glitch-visible');
+      if(entry.target.classList.contains('ambient-glow-trigger')) scene.classList.add('glow-visible');
       else reveal(scene);
     });
   },{rootMargin:'-10% 0px -24% 0px',threshold:0});
   scenes.forEach(function(scene){observer.observe(scene.querySelector('p') || scene)});
-  document.querySelectorAll('.ambient-glitch-trigger').forEach(function(trigger){observer.observe(trigger)});
+  document.querySelectorAll('.ambient-glow-trigger').forEach(function(trigger){observer.observe(trigger)});
   // Rearm brief events only after their whole scene leaves the viewport.
   var resetObserver=new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(entry.isIntersecting) return;
       var scene=entry.target;
       if(scene.classList.contains('scene-ambient-shadows')) scene.classList.remove('is-visible');
-      scene.classList.remove('glitch-visible');
+      scene.classList.remove('glow-visible');
     });
   });
   scenes.forEach(function(scene){if(!scene.classList.contains('scene-ambient-cube')) resetObserver.observe(scene)});
 })();
 </script>
-<script nonce="pF2apnqYXqIymmFoqVm5swRP">
+<script nonce="-t6HLhXm6kNjPKxNeJnC_uR8">
 (function(){
   // «Продолжить чтение» — запомнить текущую главу
   try{ localStorage.setItem('kz_last', JSON.stringify({id:9, title:"\u041f\u043e\u044f\u0432\u043b\u0435\u043d\u0438\u0435 \u0413\u043e\u043b\u043e\u0433\u0440\u0430\u043c\u043c\u044b"})); }catch(e){}
