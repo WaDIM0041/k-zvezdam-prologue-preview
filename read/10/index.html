@@ -221,7 +221,7 @@
   </div>
 </footer>
 </div>
-<script nonce="h-Tp-IXB2QCeUbgVggRKYadM">
+<script nonce="8-yhVEnnK2CRPksvPgbSpEOG">
 (function(){
   var n=document.getElementById('nav'),
       t=document.getElementById('toTop'),
@@ -241,12 +241,12 @@
   if(t) t.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 })();
 </script>
-<script nonce="h-Tp-IXB2QCeUbgVggRKYadM" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script nonce="h-Tp-IXB2QCeUbgVggRKYadM" src="/k-zvezdam-prologue-preview/static/js/hero.js"></script>
-<script nonce="h-Tp-IXB2QCeUbgVggRKYadM" src="/k-zvezdam-prologue-preview/static/js/flyby.js"></script>
+<script nonce="8-yhVEnnK2CRPksvPgbSpEOG" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script nonce="8-yhVEnnK2CRPksvPgbSpEOG" src="/k-zvezdam-prologue-preview/static/js/hero.js"></script>
+<script nonce="8-yhVEnnK2CRPksvPgbSpEOG" src="/k-zvezdam-prologue-preview/static/js/flyby.js"></script>
 
 
-<script nonce="h-Tp-IXB2QCeUbgVggRKYadM">
+<script nonce="8-yhVEnnK2CRPksvPgbSpEOG">
 (function(){
   var scenes=document.querySelectorAll('.scene-ambient');
   if(!scenes.length) return;
@@ -258,14 +258,17 @@
   var observer=new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(!entry.isIntersecting) return;
-      reveal(entry.target);
+      var scene=entry.target.closest('.scene-ambient');
+      if(entry.target.classList.contains('ambient-glitch-trigger')) scene.classList.add('glitch-visible');
+      else reveal(scene);
       observer.unobserve(entry.target);
     });
-  },{rootMargin:'0px 0px -16% 0px',threshold:.14});
-  scenes.forEach(function(scene){observer.observe(scene)});
+  },{rootMargin:'-10% 0px -24% 0px',threshold:0});
+  scenes.forEach(function(scene){observer.observe(scene.querySelector('p') || scene)});
+  document.querySelectorAll('.ambient-glitch-trigger').forEach(function(trigger){observer.observe(trigger)});
 })();
 </script>
-<script nonce="h-Tp-IXB2QCeUbgVggRKYadM">
+<script nonce="8-yhVEnnK2CRPksvPgbSpEOG">
 (function(){
   // «Продолжить чтение» — запомнить текущую главу
   try{ localStorage.setItem('kz_last', JSON.stringify({id:10, title:"\u0412 \u043f\u043e\u0438\u0441\u043a\u0430\u0445 \u0412\u0430\u0434\u0438\u043c\u0430"})); }catch(e){}
