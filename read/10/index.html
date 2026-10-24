@@ -221,7 +221,7 @@
   </div>
 </footer>
 </div>
-<script nonce="knfCcrB1bQ8oEhfkeME-cq2i">
+<script nonce="dQQD1hE0y6HeT6noV2xM25Cc">
 (function(){
   var n=document.getElementById('nav'),
       t=document.getElementById('toTop'),
@@ -241,12 +241,31 @@
   if(t) t.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
 })();
 </script>
-<script nonce="knfCcrB1bQ8oEhfkeME-cq2i" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script nonce="knfCcrB1bQ8oEhfkeME-cq2i" src="/k-zvezdam-prologue-preview/static/js/hero.js"></script>
-<script nonce="knfCcrB1bQ8oEhfkeME-cq2i" src="/k-zvezdam-prologue-preview/static/js/flyby.js"></script>
+<script nonce="dQQD1hE0y6HeT6noV2xM25Cc" src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script nonce="dQQD1hE0y6HeT6noV2xM25Cc" src="/k-zvezdam-prologue-preview/static/js/hero.js"></script>
+<script nonce="dQQD1hE0y6HeT6noV2xM25Cc" src="/k-zvezdam-prologue-preview/static/js/flyby.js"></script>
 
 
-<script nonce="knfCcrB1bQ8oEhfkeME-cq2i">
+<script nonce="dQQD1hE0y6HeT6noV2xM25Cc">
+(function(){
+  var scenes=document.querySelectorAll('.scene-ambient');
+  if(!scenes.length) return;
+  function reveal(node){ node.classList.add('is-visible'); }
+  if(!('IntersectionObserver' in window)){
+    scenes.forEach(reveal);
+    return;
+  }
+  var observer=new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(!entry.isIntersecting) return;
+      reveal(entry.target);
+      observer.unobserve(entry.target);
+    });
+  },{rootMargin:'0px 0px -16% 0px',threshold:.14});
+  scenes.forEach(function(scene){observer.observe(scene)});
+})();
+</script>
+<script nonce="dQQD1hE0y6HeT6noV2xM25Cc">
 (function(){
   // «Продолжить чтение» — запомнить текущую главу
   try{ localStorage.setItem('kz_last', JSON.stringify({id:10, title:"\u0412 \u043f\u043e\u0438\u0441\u043a\u0430\u0445 \u0412\u0430\u0434\u0438\u043c\u0430"})); }catch(e){}
